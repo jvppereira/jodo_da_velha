@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Latin&family=Hind+Siliguri:wght@300&family=Noto+Sans+Mono:wght@200&family=PT+Sans+Narrow&family=Poppins:ital,wght@1,200&family=Press+Start+2P&family=Quicksand:wght@300&family=Russo+One&family=Silkscreen&family=Varela+Round&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Lato', sans-serif;
+}
+html,body{
+	height: 100%;
+	background-color: #395780
+;
+}
+.container{
+	margin: 0 auto;
+
+	width: 100%;
+	padding-top: 50px;
+	max-width:1000px;
+	height: 800px; 
+}
+.titulo {
+	border-radius: 20px;
+	padding-left: 20px;
+	background-color: white;
+	width: 200px;
+	height: 30px;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	border: 1px solid black;
+
+}
+.vez{
+	text-align: center;
+	border-radius: 3px;
+
+	background-color: white;
+	max-width: 480px;
+	width: 100%;
+	height: 30px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	border: 1px solid black;
+}
+.placc{
+	margin: 0 auto;
+	display: flex;
+	width: 100%;
+	max-width: 600px;
+	height: 120px;
+	text-align: center;
+}
+.placar{
+	border-radius: 3px;
+
+	padding-top: 22PX;
+	background-color: #81d2eb;
+	width: 30%;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	border: 1px solid black;
+}
+.X{
+	border-radius: 3px;
+	background-color: #81d2eb;
+	padding-top: 18PX;
+	
+	width: 15%;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	border: 1px solid black;
+}
+.O{
+	border-radius: 3px;
+
+	padding-top: 18PX;
+	background-color: #81d2eb;
+	width: 15%;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	border: 1px solid black;
+}
+
+.resX{
+	border-radius: 3px;
+	
+	padding-top: 18PX;
+	background-color: #fca156;
+	width: 15%;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	border: 1px solid black;
+}
+.resO{
+	border-radius: 3px;
+	
+	padding-top: 18PX;
+	background-color: #fca156;
+	width: 15%;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	border: 1px solid black;
+}
+
+
+.X p{
+
+	font-size: 30px;
+}
+.O p{
+		font-size: 30px;
+}
+
+.resX p{
+		font-size: 30px;
+}
+.resO p{
+		font-size: 30px;
+}
+
+
+.linha{
+
+
+	display: flex;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 400px;
+	height: 100px;
+	background-color: #ccc;
+}
+.coluna{
+	padding-left: 36px;
+	border: 4px solid black;
+	width: 34%;
+	cursor: pointer;
+}
+.coluna p {
+
+	font-size: 80px;
+}

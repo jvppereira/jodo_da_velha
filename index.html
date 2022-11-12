@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jogo da velha</title>
+    <style type="text/css">
+        
+
+        @import url('https://fonts.googleapis.com/css2?family=Anek+Latin&family=Hind+Siliguri:wght@300&family=Noto+Sans+Mono:wght@200&family=PT+Sans+Narrow&family=Poppins:ital,wght@1,200&family=Press+Start+2P&family=Quicksand:wght@300&family=Russo+One&family=Silkscreen&family=Varela+Round&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+html,body{
+    height: 100%;
+    background-color: #395780
+;
+}
+.container{
+    margin: 0 auto;
+
+    width: 100%;
+    padding-top: 50px;
+    max-width:1000px;
+    height: 800px; 
+}
+.titulo {
+    border-radius: 20px;
+    padding-left: 20px;
+    background-color: white;
+    width: 200px;
+    height: 30px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    border: 1px solid black;
+
+}
+.vez{
+    text-align: center;
+    border-radius: 3px;
+
+    background-color: white;
+    max-width: 480px;
+    width: 100%;
+    height: 30px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border: 1px solid black;
+}
+.placc{
+    margin: 0 auto;
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    height: 120px;
+    text-align: center;
+}
+.placar{
+    border-radius: 3px;
+
+    padding-top: 22PX;
+    background-color: #81d2eb;
+    width: 30%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    border: 1px solid black;
+}
+.X{
+    border-radius: 3px;
+    background-color: #81d2eb;
+    padding-top: 18PX;
+    
+    width: 15%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    border: 1px solid black;
+}
+.O{
+    border-radius: 3px;
+
+    padding-top: 18PX;
+    background-color: #81d2eb;
+    width: 15%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    border: 1px solid black;
+}
+
+.resX{
+    border-radius: 3px;
+    
+    padding-top: 18PX;
+    background-color: #fca156;
+    width: 15%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    border: 1px solid black;
+}
+.resO{
+    border-radius: 3px;
+    
+    padding-top: 18PX;
+    background-color: #fca156;
+    width: 15%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    border: 1px solid black;
+}
+
+
+.X p{
+
+    font-size: 30px;
+}
+.O p{
+        font-size: 30px;
+}
+
+.resX p{
+        font-size: 30px;
+}
+.resO p{
+        font-size: 30px;
+}
+
+
+.linha{
+
+
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 400px;
+    height: 100px;
+    background-color: #ccc;
+}
+.coluna{
+    padding-left: 36px;
+    border: 4px solid black;
+    width: 34%;
+    cursor: pointer;
+}
+.coluna p {
+
+    font-size: 80px;
+}
+.bgL{
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 800px;
+    background-color: rgba(0,0,0,0.8);
+}
+.bgconteudoL{
+    left: 50%;
+    top: 1%;
+    transform: translate(-50%);
+
+    position: fixed;
+    max-width: 500px;   
+    width: 100%;
+    height: 420px;
+    margin: 100px auto;
+    background-color: white;
+
+}
+
+
+
+.conteudop{
+    width: 50%;
+    padding-top: 20px;
+    padding-left: 20px;
+    color: white;
+
+}
+
+
+.tituloL{
+
+    color: black;
+    position: relative;
+    padding-top: 10px;
+    padding-left: 20px;
+    font-family: 'Noto Sans Mono', monospace;
+}
+.tituloL h2{
+    padding-left: 10px;
+font-size: 40px;
+font-family: 'Noto Sans Mono', monospace;
+}
+
+.bgconteudoL input{
+
+    font-family: 'Noto Sans Mono', monospace;
+    margin-left: 90px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 40px;
+    font-size: 40px;
+    background-color:#afc4e3;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+    padding-left: 10px;
+    width: 300px;
+}
+
+.bgL2{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 800px;
+    background-color: rgba(0,0,0,0.8);
+}
+.bgconteudoL2{
+    left: 50%;
+    border: 4px solid white;
+    top: 1%;
+    transform: translate(-50%);
+    position: fixed;
+    max-width: 500px;   
+    width: 100%;
+    height: 100px;
+    margin: 100px auto;
+    background-color: #39db64;
+
+}
+
+
+
+.conteudop2{
+    width: 50%;
+    padding-top: 20px;
+    padding-left: 20px;
+    color: white;
+
+}
+
+
+.tituloL2{
+    margin: 0 auto;
+    color: black;
+    position: relative;
+    left: 20%;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-left: 20px;
+    font-family: 'Noto Sans Mono', monospace;
+}
+.tituloL2 h2{
+    padding-left: 10px;
+font-size: 40px;
+
+font-family: 'Noto Sans Mono', monospace;
+}
+.bgL3{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 800px;
+    background-color: rgba(0,0,0,0.8);
+}
+.bgconteudoL3{
+    left: 50%;
+    border: 4px solid white;
+    top: 1%;
+    transform: translate(-50%);
+    position: fixed;
+    max-width: 500px;   
+    width: 100%;
+    height: 100px;
+    margin: 100px auto;
+    background-color: #39db64;
+
+}
+
+
+
+.conteudop3{
+    width: 50%;
+    padding-top: 20px;
+    padding-left: 20px;
+    color: white;
+
+}
+
+
+.tituloL3{
+    margin: 0 auto;
+    color: black;
+    position: relative;
+    left: 20%;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-left: 20px;
+    font-family: 'Noto Sans Mono', monospace;
+}
+.tituloL3 h2{
+    padding-left: 10px;
+font-size: 40px;
+
+font-family: 'Noto Sans Mono', monospace;
+}
+
+
+
+
+
+    </style>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+</head>
+
+<body>
+
+    <div class="bgL" id="a">
+        <div class="bgconteudoL" >
+            
+            
+
+            <div class="tituloL">
+                <h2>selecione um modo de jogo</h2>
+            </div>  
+
+            <input type="submuit" name="acao" value="1 jogador" onclick="umj()">
+             <input type="submuit" name="acao" value="2 jogadores" onclick="umj2()">
+
+            </div><!--bgconteudo-->
+
+            
+        </div><!--bgl-->
+
+
+        <div class="bgL2" id="bgl2">
+        <div class="bgconteudoL2" id="bgl22">
+            
+            
+
+            <div class="tituloL2" >
+                <h2>Vence o X</h2>
+            </div>  
+
+
+            </div><!--bgconteudo2-->
+
+            
+        </div><!--bgl2-->
+
+
+                <div class="bgL3" id="bgl3">
+        <div class="bgconteudoL3" id="bgl33">
+            
+            
+
+            <div class="tituloL2" >
+                <h2>Vence o O</h2>
+            </div>  
+
+
+            </div><!--bgconteudo2-->
+
+            
+        </div><!--bgl2-->
+
+
+
+
+
+		<div class="container">
+
+			<div class="titulo">
+				<h2>Jogo da velha</h2>
+			</div>
+
+			<div class="vez">
+				<h2>Vez do jogador</h2>	
+			</div>
+
+
+			<div class="placc">
+
+			<div class="X"> <p>X</p> </div>
+			<div class="resX"> <p>0</p> </div>
+
+
+			<div class="placar">	<h2>PLACAR</h2></div>
+
+			<div class="resO"> <p>0</p> </div>
+			<div class="O"> <p>O</p> </div>
+			
+			</div>
+			
+			
+
+
+
+			<div class="tab">
+	
+
+
+			<div class="linha">
+				<div class="coluna" id="2"> <p></p> </div>
+				<div class="coluna" id="3"> <p></p> </div>
+				<div class="coluna" id="4"> <p></p> </div>
+			</div>
+
+			<div class="linha">
+				<div class="coluna" id="5"> <p></p> </div>
+				<div class="coluna" id="6"> <p></p> </div>
+				<div class="coluna" id="7"> <p></p> </div>	
+			</div>
+
+			<div class="linha">
+				<div class="coluna" id="8"> <p></p> </div>
+				<div class="coluna" id="9"> <p></p> </div>
+				<div class="coluna" id="10"> <p></p> </div>
+			</div>
+
+			
+			</div><!--tab-->
+
+		
+<script type="text/javascript">
+	
+let el = document.getElementById('a');
+
+const currentPlayer = document.querySelector(".vez");
+
+
+
+
+let jog1 = 1;
+let jog2 = 1;
+
+function umj(){
+    el.style.display = 'none';
+    jog1 = 0;
+};
+function umj2(){
+    el.style.display = 'none';
+    jog2 = 0;
+};
+
+
+let VitX = 0;
+let VitO = 0;
+var vez = "X";
+
+let t = 0;
+
+
+//console.log(`Vitorias X = ${VitX} e Vitorias O = ${VitO}`)
+
+
+function init() {
+    
+	t = 0;
+	vez = "X";
+
+    matrizR = [
+        [],
+        [],
+        [],
+    ]
+    
+    let e = 2;
+    
+    for(let i = 0; i < 3; i++){
+        for(let j = 0; j < 3; j++){
+            matrizR[i][j] = e;
+            e++;
+            };
+        };
+  currentPlayer.innerHTML = `JOGADOR DA VEZ: ${vez}`;
+
+  document.querySelectorAll(".linha .coluna").forEach((item) => {
+    item.innerHTML = "";
+    item.addEventListener("click", newMove);
+  });
+}
+
+
+
+
+init();
+
+
+function newMove(e) {
+  
+  const index = e.target.getAttribute("id");
+  console.log(index)
+  
+  //verificando e setando o indice da matriz como 0 para X ou 1 para O 
+  currentPlayer.innerHTML = "JOGADOR DA VEZ1: X";
+        for(let i = 0; i < 3; i++){
+                    for(let j = 0; j < 3; j++){
+                        
+                        if(matrizR[i][j] != 0 && matrizR[i][j] != 1 && matrizR[i][j] == index && vez == "X"){
+                            matrizR[i][j] = 0;
+                              e.target.innerHTML = "X";
+                            
+
+                              vez = "O";
+                           
+                        }
+         
+        
+                };
+            }; 
+    
+
+    if (jog1 == 0){
+    setTimeout(() => {
+          
+          currentPlayer.innerHTML = "JOGADOR DA VEZ: X";;
+    }, "1000")     
+   
+     
+    
+    
+        let resultado = 0; 
+
+
+    //while para que o computador jogueate achar um numero valido
+   
+    while(resultado != 1){
+
+        let indexcomp = Math.floor(Math.random() * 10);
+
+        for(let i = 0; i < 3; i++){
+                    for(let j = 0; j < 3; j++){
+                        
+                        if(matrizR[i][j] != 0 && matrizR[i][j] != 1 && matrizR[i][j] == indexcomp && vez == "O"){
+                            matrizR[i][j] = 1;
+
+                            //aqui ele precisa pegar a div com o memso indice do indexcomp
+
+                              const n = document.getElementById(`${indexcomp}`);
+
+
+                              n.innerHTML = "O";
+                             
+
+                              resultado = 1;  
+                              
+                              vez = "X";
+                              currentPlayer.innerHTML = "JOGADOR DA VEZ: O";
+                              
+                          
+                        }
+                    };
+        
+                };  };
+    }
+    else{
+          currentPlayer.innerHTML = "JOGADOR DA VEZ1: O";
+        for(let i = 0; i < 3; i++){
+                    for(let j = 0; j < 3; j++){
+                        
+                        if(matrizR[i][j] != 0 && matrizR[i][j] != 1 && matrizR[i][j] == index && vez == "O"){
+                            matrizR[i][j] = 1;
+                              e.target.innerHTML = "O";
+                              vez = "X";
+                            currentPlayer.innerHTML = "JOGADOR DA VEZ: X";
+                        }
+         
+        
+                };
+            }; 
+    }
+
+
+	
+     
+    
+
+      
+        
+
+
+        //imprimindo a tabela verificando se ha vencedor
+        for(let i = 0; i < 3; i++){
+                for(let j = 0; j < 3; j++){
+                    
+                    if(matrizR[i][0] == 0 && matrizR[i][1] == 0 && matrizR[i][2] == 0 || matrizR[0][j] == 0 && matrizR[1][j] == 0 && matrizR[2][j] == 0 || matrizR[0][0] == 0 && matrizR[1][1] == 0 && matrizR[2][2] == 0 || matrizR[2][0] == 0 && matrizR[1][1] == 0 && matrizR[0][2] == 0 ){
+                        t = 1;
+                    }
+
+                    };
+                };
+
+        
+         //imprimindo a tabela verificando se ha vencedor bolinha
+        for(let i = 0; i < 3; i++){
+                    for(let j = 0; j < 3; j++){
+                        
+                        if(matrizR[i][0] == 1 && matrizR[i][1] == 1 && matrizR[i][2] == 1 || matrizR[0][j] == 1 && matrizR[1][j] == 1 && matrizR[2][j] == 1 || matrizR[0][0] == 1 && matrizR[1][1] == 1 && matrizR[2][2] == 1 || matrizR[2][0] == 1 && matrizR[1][1] == 1 && matrizR[0][2] == 1){
+                            t = 2;
+                        }
+        
+                };
+            };    
+
+        //velha
+        let addmais = 0;
+        for(let i = 0; i < 3; i++){
+                for(let j = 0; j < 3; j++){
+                    
+                    if(matrizR[i][j] == 1 || matrizR[i][j] == 0 ){
+                        addmais++;
+                    }
+    
+            };
+        };   
+        if(addmais == 9){
+            t = 3;
+        }
+
+
+       
+
+        //resultados
+        if(t == 1){
+
+        	let x = document.getElementById('bgl2');
+            x.style.display = 'initial';
+            
+            console.log(`vence o X`)
+            
+
+            setTimeout(() => {
+          
+            x.style.display = 'none';
+                }, "1000") 
+
+
+            VitX++;
+     
+       			 const xzao = document.querySelector(".resX");
+
+        		xzao.innerHTML = VitX;    
+        		init();
+			}
+            
+            
+             
+
+
+        else if(t == 2){
+
+            let x3 = document.getElementById('bgl3');
+            x3.style.display = 'initial';
+           
+            console.log(`vence o X`)
+        		
+
+            setTimeout(() => {
+          
+            x3.style.display = 'none';
+                }, "1000") 
+                
+              
+            	VitO++;
+            
+
+		        const ozao = document.querySelector(".resO");
+		        ozao.innerHTML = VitO;  
+
+		        init();
+
+        	
+        }
+
+
+        else if(t == 3){
+        	
+        	
+            console.log(`deu velha`);
+            init();
+
+        }
+
+
+        else{
+            console.log("segue o jogo")
+        }
+
+
+           
+}
+
+
+
+
+
+
+</script>
+		
+
+</body>
+
+</html>
